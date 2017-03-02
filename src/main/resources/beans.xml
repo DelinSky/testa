@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=" http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="delete" class ="com.delinsky.IoC.Delete"></bean>
+    <bean id="put" class ="com.delinsky.IoC.Put"></bean>
+    <bean id="post" class ="com.delinsky.IoC.Post"></bean>
+    <bean id="get" class ="com.delinsky.IoC.Get"></bean>
+    <bean id="HttpRequestService" class="com.delinsky.IoC.HttpRequestService">
+        <property name = "anyRequest">
+            <ref bean="put"/>
+        </property>
+    </bean>
+
+</beans>
