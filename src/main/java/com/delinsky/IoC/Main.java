@@ -1,14 +1,16 @@
 package com.delinsky.IoC;
+import com.delinsky.container.MyContainer;
+
 /**
  * Created by Vladimir on 02.03.2017.
  */
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println();
+        MyContainer testContainer = new MyContainer();
 
-        HttpRequestService testRequest = new HttpRequestService();
-        testRequest.getInfoAbout();
+        ((HttpRequestService) testContainer.container.get("service")).setAnyRequest((HttpRequest) testContainer.container.get("get"));
 
+        ((HttpRequestService) testContainer.container.get("service")).testMethod();
     }
 }
