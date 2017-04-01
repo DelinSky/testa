@@ -12,5 +12,8 @@ public class Main {
         ((HttpRequestService) testContainer.container.get("service")).setAnyRequest((HttpRequest) testContainer.container.get("get"));
 
         ((HttpRequestService) testContainer.container.get("service")).testMethod();
+
+        HttpRequest testProxy = new ProxyLogger((HttpRequest) testContainer.container.get("put"));
+        testProxy.returnMethod();
     }
 }
