@@ -12,7 +12,7 @@ public class ProxyLogger implements HttpRequest{
 
 
     public void returnMethod() {
-        System.out.println("start");
+        System.out.println("\nstart");
         a.returnMethod();
         System.out.println("end");
     }
